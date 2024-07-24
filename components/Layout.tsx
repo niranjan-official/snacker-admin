@@ -78,7 +78,7 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
               !checked ? "pointer-events-none opacity-50" : ""
             }`}
           >
-            {[1,2,3,4,5,6].map((position) => (
+            {[5,6,3,4,1,2].map((position) => (
               <Selector
                 key={position}
                 position={position}
