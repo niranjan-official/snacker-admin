@@ -64,12 +64,12 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
   return (
     <div className="flex flex-col">
       <div className="my-4 flex flex-col">
-        <hr />
+        <hr className="border border-zinc-400/70" />
         <div className="flex w-full justify-between py-2">
           <span>Enable it to update the stock</span>
           <UpdationSwitch checked={checked} setChecked={setChecked} />
         </div>
-        <hr />
+        <hr className="border border-zinc-400/70" />
       </div>
       {!load ? (
         <div className={`${!checked ? "pointer-events-none opacity-50" : ""}`}>

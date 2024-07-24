@@ -11,7 +11,7 @@ const UpdationSwitch = ({
   checked: boolean;
   setChecked: Dispatch<SetStateAction<boolean>>;
 }) => {
-  return <Switch checked={checked} onCheckedChange={setChecked} />;
+  return <Switch checked={checked} onCheckedChange={setChecked} className="border border-black/10 shadow" />;
 };
 
 export default UpdationSwitch;
