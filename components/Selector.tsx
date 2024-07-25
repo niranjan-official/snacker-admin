@@ -31,7 +31,7 @@ import {
 interface SelectorProps {
   position: number;
   products: Products[];
-  onUpdate: (updatedProduct: Products) => void;
+  onUpdate: (updatedProducts: Products[]) => void;
 }
 
 const Selector = ({ position, products, onUpdate }: SelectorProps) => {
@@ -39,13 +39,21 @@ const Selector = ({ position, products, onUpdate }: SelectorProps) => {
   const [value, setValue] = useState("");
   const [alertOpen, setAlertOpen] = useState(false);
   const [stock, setStock] = useState("");
+  const [selectedProduct, setSelectedProduct] = useState<Products | undefined>(undefined);
+  const [initialProduct, setInitialProduct] = useState<Products | undefined>(undefined);
 
-  const selectedProduct = products.find((product) => product.key === value);
+  useEffect(() => {
+    const initialProd = products.find((product) => product.position === position);
+    setInitialProduct(initialProd);
+    setSelectedProduct(initialProd);
+  }, [position, products]);
 
   const handleSelect = (currentValue: string) => {
     setValue(currentValue === value ? "" : currentValue);
     setOpen(false);
     setAlertOpen(true);
+    const newlySelectedProduct = products.find((product) => product.key === currentValue);
+    setSelectedProduct(newlySelectedProduct);
   };
 
   const handleSubmit = () => {
@@ -55,14 +63,22 @@ const Selector = ({ position, products, onUpdate }: SelectorProps) => {
         stock: parseInt(stock),
         position,
       };
-      onUpdate(updatedProduct);
+
+      const updatedProducts = products.map((product) => {
+        if (product.key === selectedProduct.key) {
+          return updatedProduct;
+        } else if (product.position === position && product.key !== selectedProduct.key) {
+          return { ...product, position: 0, stock: 0 };
+        }
+        return product;
+      });
+
+      onUpdate(updatedProducts);
+      setValue("");
+      setStock("");
     }
     setAlertOpen(false);
   };
-
-  const initialProduct = products.find(
-    (product) => product.position === position,
-  );
 
   return (
     <div className="relative flex h-32 w-[calc(50%-1rem)] items-center justify-center rounded-lg bg-blue-600">

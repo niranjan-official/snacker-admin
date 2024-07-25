@@ -33,12 +33,8 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
     }
   }, [checked, load]);
 
-  const handleUpdate = (updatedProduct: Products) => {
-    setNewProducts((prevProducts) =>
-      prevProducts.map((product) =>
-        product.key === updatedProduct.key ? updatedProduct : product
-      )
-    );
+  const handleUpdate = (updatedProducts: Products[]) => {
+    setNewProducts(updatedProducts);
   };
 
   const updateProducts = async () => {
