@@ -58,7 +58,7 @@ const AddProduct = () => {
                 name: productName,
                 price: parseInt(price),
                 category: category,
-                position: 1000,
+                position: 0,
                 stock: 0,
                 reserved: 0,
                 imgSrc: downloadURL,
