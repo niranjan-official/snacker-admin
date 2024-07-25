@@ -97,9 +97,9 @@ const AddProduct = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <button className="flex w-full items-center justify-between rounded-lg bg-blue-700 p-3 text-xl text-white shadow">
-          Add Product
-          <IoAddOutline size={30} className="rounded-lg bg-white/10 p-1" />
+        <button className="flex items-center gap-1 rounded-lg bg-blue-700 p-2 text-xl text-white shadow">
+          Add
+          <IoAddOutline size={30} />
         </button>
       </AlertDialogTrigger>
       <AlertDialogContent className="rounded-xl bg-slate-200">
