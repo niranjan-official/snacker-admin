@@ -57,6 +57,7 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
       console.error("Error updating products:", error);
     }
     setOnUpdate(false);
+    window.location.reload();
   };
 
   return (
