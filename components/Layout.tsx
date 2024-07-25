@@ -39,6 +39,8 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
 
   const updateProducts = async () => {
     setOnUpdate(true);
+    console.log(newProducts);
+    
     try {
       const updatePromises = newProducts.map((product) => {
         const productRef = doc(db, "products", product.key);
