@@ -15,7 +15,7 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
   const [load, setLoad] = useState(true);
 
   useEffect(() => {
-    const starCountRef = ref(rtdb, "onStockUpdation");
+    const starCountRef = ref(rtdb, "onStockUpdation/status");
     const unsubscribe = onValue(starCountRef, (snapshot) => {
       const data = snapshot.val();
       setChecked(data);
@@ -27,8 +27,8 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
 
   useEffect(() => {
     if (!load) { 
-      set(ref(rtdb, "/"), {
-        onStockUpdation: checked,
+      set(ref(rtdb, "/onStockUpdation"), {
+        status: checked,
       });
     }
   }, [checked, load]);
