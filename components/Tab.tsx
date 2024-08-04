@@ -9,7 +9,7 @@ import { usePathname } from "next/navigation";
 const Tab = () => {
   const pathname = usePathname();
   return (
-    <div className="fixed bottom-0 left-0 flex w-full items-center justify-evenly border-t border-zinc-500 bg-dark-100 p-3 py-4">
+    <div className="bg-dark-100 fixed bottom-0 left-0 flex w-full items-center justify-evenly border-t border-zinc-500 p-3 py-4">
       <div
         className={`rounded-lg p-1 ${pathname === "/" ? "bg-blue-600 text-white" : "text-blue-600"}`}
       >
@@ -25,9 +25,9 @@ const Tab = () => {
         </Link>
       </div>
       <div
-        className={`rounded-lg p-1 ${pathname === "/settings" ? "bg-blue-600 text-white" : "text-blue-600"}`}
+        className={`rounded-lg p-1 ${pathname === "/menu" ? "bg-blue-600 text-white" : "text-blue-600"}`}
       >
-        <Link href={"/settings"}>
+        <Link href={"/menu"}>
           <IoMdSettings size={25} />
         </Link>
       </div>
