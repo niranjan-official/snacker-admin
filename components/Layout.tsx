@@ -65,7 +65,7 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
       <div className="my-4 flex flex-col">
         <hr className="border border-zinc-400/70" />
         <div className="flex w-full justify-between py-2">
-          <span>Enable it to update the stock</span>
+          <span className="text-neutral-50">Enable it to update the stock</span>
           <UpdationSwitch checked={checked} setChecked={setChecked} />
         </div>
         <hr className="border border-zinc-400/70" />
@@ -89,7 +89,7 @@ const Layout: React.FC<{ products: Products[] }> = ({ products }) => {
           <button
             disabled={onUpdate}
             onClick={updateProducts}
-            className="mt-4 w-full rounded-lg bg-blue-900 p-2 text-white"
+            className="mt-4 w-full rounded-lg bg-blue-700 p-2 text-white"
           >
             {onUpdate ? (
               <VscLoading

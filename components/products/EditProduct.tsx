@@ -56,7 +56,7 @@ const EditProduct: React.FC<EditProductProps> = ({ product, onUpdate }) => {
             Edit
           </button>
         </AlertDialogTrigger>
-        <AlertDialogContent className="rounded-lg bg-white p-6 shadow-lg">
+        <AlertDialogContent className="rounded-lg bg-dark-200 text-neutral-50 p-6 shadow-lg">
           <AlertDialogHeader>
             <AlertDialogTitle className="text-xl font-semibold">
               Edit Product
@@ -66,13 +66,13 @@ const EditProduct: React.FC<EditProductProps> = ({ product, onUpdate }) => {
             <div>
               <label
                 htmlFor="name"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-400"
               >
                 Name
               </label>
               <input
                 id="name"
-                className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-1 w-full rounded-md shadow bg-dark-100 text-neutral-50 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 name="name"
                 value={value.name}
                 type="text"
@@ -83,13 +83,13 @@ const EditProduct: React.FC<EditProductProps> = ({ product, onUpdate }) => {
             <div>
               <label
                 htmlFor="price"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-400"
               >
                 Price
               </label>
               <input
                 id="price"
-                className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-1 w-full rounded-md shadow bg-dark-100 text-neutral-50 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 name="price"
                 value={value.price}
                 type="text"
@@ -100,13 +100,13 @@ const EditProduct: React.FC<EditProductProps> = ({ product, onUpdate }) => {
             <div>
               <label
                 htmlFor="stock"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-400"
               >
                 Stock
               </label>
               <input
                 id="stock"
-                className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-1 w-full rounded-md shadow bg-dark-100 text-neutral-50 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 name="stock"
                 value={value.stock}
                 type="text"
@@ -116,31 +116,14 @@ const EditProduct: React.FC<EditProductProps> = ({ product, onUpdate }) => {
             </div>
             <div>
               <label
-                htmlFor="reserved"
-                className="block text-sm font-medium text-gray-700"
-              >
-                Reserved
-              </label>
-              <input
-                id="reserved"
-                className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
-                name="reserved"
-                value={value.reserved}
-                type="text"
-                onChange={handleChange}
-                placeholder="Reserved"
-              />
-            </div>
-            <div>
-              <label
                 htmlFor="category"
-                className="block text-sm font-medium text-gray-700"
+                className="block text-sm font-medium text-neutral-400"
               >
                 Category
               </label>
               <input
                 id="category"
-                className="mt-1 w-full rounded-md border border-gray-300 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
+                className="mt-1 w-full rounded-md shadow bg-dark-100 text-neutral-50 p-2 focus:outline-none focus:ring-2 focus:ring-blue-500"
                 name="category"
                 value={value.category}
                 type="text"
@@ -150,7 +133,7 @@ const EditProduct: React.FC<EditProductProps> = ({ product, onUpdate }) => {
             </div>
           </div>
           <AlertDialogFooter>
-            <AlertDialogCancel className="mr-2 rounded-md bg-gray-200 px-4 py-2 hover:bg-gray-300">
+            <AlertDialogCancel className="mr-2 rounded-md bg-gray-200 text-black w-full px-4 py-2 hover:bg-gray-300">
               Cancel
             </AlertDialogCancel>
             <button

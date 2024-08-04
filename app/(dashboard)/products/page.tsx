@@ -48,7 +48,6 @@ const onUpdate = async (product: Products) => {
       name: product.name,
       price: product.price,
       stock: product.stock,
-      reserved: product.reserved,
       category: product.category,
     });
     return { success: true };
@@ -61,9 +60,9 @@ const onUpdate = async (product: Products) => {
 const page = async () => {
   const products = await getProducts();
   return (
-    <div className="flex min-h-screen w-full flex-col bg-slate-100 p-6 px-4 pb-20">
+    <div className="flex min-h-screen w-full flex-col bg-dark-200 p-6 px-4 pb-20">
       <div className="flex w-full items-center justify-between">
-        <h3 className="text-2xl font-semibold">Product List</h3>
+        <h3 className="text-2xl font-medium text-neutral-50">Product List</h3>
         <AddProduct />
       </div>
       <hr className="my-3" />

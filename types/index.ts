@@ -3,8 +3,11 @@ export interface Products {
     name: string;
     stock: number;
     price: number;
-    reserved: number;
     imgSrc: string;
     category: string;
     position: number;
+}
+export interface STATUS {
+    success: boolean;
+    error: string | null;
 }

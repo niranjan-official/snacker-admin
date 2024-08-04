@@ -60,7 +60,6 @@ const AddProduct = () => {
                 category: category,
                 position: 0,
                 stock: 0,
-                reserved: 0,
                 imgSrc: downloadURL,
               });
               console.log("Document written with ID: ", docRef.id);
@@ -97,57 +96,63 @@ const AddProduct = () => {
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
-        <button className="flex items-center gap-1 rounded-lg bg-blue-700 p-2 text-xl text-white shadow">
+        <button className="flex items-center gap-1 rounded-lg bg-blue-700 p-2 py-1 text-lg text-white shadow">
           Add
-          <IoAddOutline size={30} />
+          <IoAddOutline size={25} />
         </button>
       </AlertDialogTrigger>
-      <AlertDialogContent className="rounded-xl bg-slate-200">
+      <AlertDialogContent className="bg-dark-200 rounded-xl text-neutral-50">
         <AlertDialogHeader>
           <AlertDialogTitle>Enter Product Details</AlertDialogTitle>
           <form className="flex flex-col" onSubmit={handleSubmit}>
-            <label className="mt-2">
+            <label className="mt-2 text-left">
               Product Name:
               <input
                 type="text"
                 value={productName}
                 onChange={(e) => setProductName(e.target.value)}
-                className="mt-1 w-full rounded border p-2"
+                className="bg-dark-100 mt-1 w-full rounded p-2 text-neutral-50 shadow"
                 required
               />
             </label>
-            <label className="mt-2">
+            <label className="mt-2 text-left">
               Price:
               <input
                 type="number"
                 value={price}
                 onChange={(e) => setPrice(e.target.value)}
-                className="mt-1 w-full rounded border p-2"
+                className="bg-dark-100 mt-1 w-full rounded p-2 text-neutral-50 shadow"
                 required
               />
             </label>
-            <label className="mt-2">
+            <label className="mt-2 text-left">
               Image:
               <input
                 type="file"
                 onChange={handleFileChange}
-                className="mt-1 w-full rounded border p-2"
+                className="bg-dark-100 mt-1 w-full rounded p-2 text-neutral-50 shadow"
                 required
               />
             </label>
-            <label className="mt-2">
+            <label className="mt-2 text-left">
               Category:
               <input
                 type="text"
                 value={category}
                 onChange={(e) => setCategory(e.target.value)}
-                className="mt-1 w-full rounded border p-2"
+                className="bg-dark-100 mt-1 w-full rounded p-2 text-neutral-50 shadow"
                 required
               />
             </label>
             <AlertDialogFooter className="mt-4">
-              <AlertDialogCancel type="button">Cancel</AlertDialogCancel>
-              <AlertDialogAction disabled={load} type="submit">
+              <AlertDialogCancel className="text-black" type="button">
+                Cancel
+              </AlertDialogCancel>
+              <AlertDialogAction
+                className="text-eutral-100 bg-blue-600 hover:bg-blue-900"
+                disabled={load}
+                type="submit"
+              >
                 {load ? (
                   <VscLoading
                     size={20}

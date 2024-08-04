@@ -45,18 +45,18 @@ const DeleteProduct = ({ productId, deleteProduct }: DeleteProductProps) => {
             Delete
           </button>
         </AlertDialogTrigger>
-        <AlertDialogContent>
+        <AlertDialogContent className="bg-dark-200 text-neutral-50">
           <AlertDialogHeader>
             <AlertDialogTitle>
               Are you sure you want to delete this product?
             </AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogDescription className="text-neutral-400">
               This action cannot be undone. This will permanently delete the
               product from your inventory.
             </AlertDialogDescription>
           </AlertDialogHeader>
           <AlertDialogFooter>
-            <AlertDialogCancel>Cancel</AlertDialogCancel>
+            <AlertDialogCancel className="text-black">Cancel</AlertDialogCancel>
             <button
               onClick={Delete}
               className="flex w-full justify-center rounded-md bg-red-500 p-2 text-white hover:bg-red-700"

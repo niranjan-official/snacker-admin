@@ -25,7 +25,7 @@ export default async function Home() {
   console.log(products);
 
   return (
-    <div className="flex min-h-screen w-full flex-col px-6 pb-20 bg-slate-200">
+    <div className="flex min-h-screen w-full flex-col px-6 pb-20 bg-dark-200">
       <Layout products={products}/>
     </div>
   );

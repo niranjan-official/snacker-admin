@@ -108,10 +108,8 @@ const Selector = ({ position, products, onUpdate }: SelectorProps) => {
             )}
           </div>
         </PopoverTrigger>
-        <PopoverContent className="w-[200px] p-0">
-          <Command>
-            <CommandInput placeholder="Search product..." />
-            <CommandEmpty>No product found.</CommandEmpty>
+        <PopoverContent className="w-[200px] p-0 border-none">
+          <Command className="bg-dark-100 text-neutral-50 border-none">
             <CommandGroup>
               <CommandList>
                 {products.map((product) => (
@@ -119,7 +117,7 @@ const Selector = ({ position, products, onUpdate }: SelectorProps) => {
                     key={product.key}
                     value={product.key}
                     onSelect={handleSelect}
-                    className="flex items-center justify-between"
+                    className="flex items-center justify-between text-neutral-50"
                   >
                     <div className="flex items-center">
                       <Check
@@ -140,12 +138,12 @@ const Selector = ({ position, products, onUpdate }: SelectorProps) => {
       </Popover>
 
       <AlertDialog open={alertOpen} onOpenChange={setAlertOpen}>
-        <AlertDialogContent>
+        <AlertDialogContent className="bg-dark-200 text-neutral-50">
           <AlertDialogHeader>
             <AlertDialogTitle>
               Enter Stock for {selectedProduct?.name}
             </AlertDialogTitle>
-            <AlertDialogDescription>
+            <AlertDialogDescription className="text-neutral-400">
               Please enter the stock amount for the selected product.
             </AlertDialogDescription>
           </AlertDialogHeader>
@@ -155,14 +153,14 @@ const Selector = ({ position, products, onUpdate }: SelectorProps) => {
               value={stock}
               onChange={(e) => setStock(e.target.value)}
               placeholder="Stock amount"
-              className="w-full rounded border p-2"
+              className="w-full rounded p-2 pl-4 bg-dark-100 text-neutral-100"
             />
           </div>
           <AlertDialogFooter>
-            <AlertDialogCancel onClick={() => setAlertOpen(false)}>
+            <AlertDialogCancel className="text-black" onClick={() => setAlertOpen(false)}>
               Cancel
             </AlertDialogCancel>
-            <AlertDialogAction onClick={handleSubmit}>Submit</AlertDialogAction>
+            <AlertDialogAction className="bg-blue-600 hover:bg-blue-900" onClick={handleSubmit}>Submit</AlertDialogAction>
           </AlertDialogFooter>
         </AlertDialogContent>
       </AlertDialog>
